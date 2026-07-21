@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===================================================================
+     SEO BÁSICO — estos valores se pisan automáticamente desde negocio.js
+     (ver función aplicarSEO() en js/main.js). Se dejan defaults acá
+     para que el HTML sea válido aunque JS tarde en cargar.
+==================================================================== -->
+<title>Don Mateo | Rotisería &amp; Pizzería</title>
+<meta name="description" content="Pedí online por WhatsApp: pizzas, empanadas, milanesas, hamburguesas, pastas y más. Comida casera, ingredientes frescos y entrega rápida.">
+<meta name="theme-color" content="#0F172A">
+<link rel="canonical" href="https://tunegocio.com.ar/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.menu">
+<meta property="og:title" content="Don Mateo | Rotisería &amp; Pizzería">
+<meta property="og:description" content="El sabor de siempre, ahora más cerca. Pedí por WhatsApp en menos de 1 minuto.">
+<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Don Mateo">
+
+<!-- Favicon (reemplazar por el logo del cliente) -->
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<!-- Tipografía -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- =====================================================
+     BOTÓN FLOTANTE DE WHATSAPP (siempre visible)
+====================================================== -->
+<a id="wsp-flotante" class="wsp-flotante" href="#" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.998.579 3.858 1.579 5.428L2 22l4.706-1.545a9.96 9.96 0 0 0 5.298 1.53h.005c5.518 0 10.004-4.486 10.004-10.004C21.996 6.486 17.52 2 12.004 2zm0 18.184h-.004a8.15 8.15 0 0 1-4.16-1.14l-.298-.177-3.09.99 1.017-3.01-.194-.309a8.164 8.164 0 0 1-1.253-4.373c0-4.51 3.674-8.184 8.186-8.184 2.187 0 4.24.852 5.786 2.4a8.13 8.13 0 0 1 2.396 5.79c0 4.512-3.674 8.186-8.186 8.186z"/>
+  </svg>
+</a>
+
+<!-- =====================================================
+     HEADER / NAV
+====================================================== -->
+<header class="header" id="header">
+  <div class="contenedor header__inner">
+    <a href="#inicio" class="marca" id="marca-logo">
+      <img id="logo-img" src="" alt="" width="40" height="40">
+      <span id="logo-nombre" class="marca__nombre"></span>
+    </a>
+
+    <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+      <a href="#menu">Menú</a>
+      <a href="#promo">Promo</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#horarios">Horarios</a>
+    </nav>
+
+    <a id="nav-wsp-btn" class="btn btn--wsp btn--sm" href="#" target="_blank" rel="noopener">Pedir ahora</a>
+
+    <button id="btn-menu-movil" class="btn-menu-movil" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- =====================================================
+       1. HERO
+  ====================================================== -->
+  <section class="hero" id="inicio">
+    <div class="hero__media">
+      <img id="hero-img" src="" alt="" loading="eager">
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="contenedor hero__contenido">
+      <img id="hero-logo" class="hero__logo" src="" alt="">
+      <p class="hero__badge" id="hero-badge"></p>
+      <h1 class="hero__titulo" id="hero-nombre"></h1>
+      <p class="hero__frase" id="hero-frase"></p>
+
+      <div class="hero__acciones">
+        <a id="hero-btn-wsp" class="btn btn--wsp btn--lg" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.998.579 3.858 1.579 5.428L2 22l4.706-1.545a9.96 9.96 0 0 0 5.298 1.53h.005c5.518 0 10.004-4.486 10.004-10.004C21.996 6.486 17.52 2 12.004 2zm0 18.184h-.004a8.15 8.15 0 0 1-4.16-1.14l-.298-.177-3.09.99 1.017-3.01-.194-.309a8.164 8.164 0 0 1-1.253-4.373c0-4.51 3.674-8.184 8.186-8.184 2.187 0 4.24.852 5.786 2.4a8.13 8.13 0 0 1 2.396 5.79c0 4.512-3.674 8.186-8.186 8.186z"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <a href="#menu" class="btn btn--outline btn--lg">Ver Menú</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       2. PRODUCTOS DESTACADOS
+  ====================================================== -->
+  <section class="seccion" id="destacados">
+    <div class="contenedor">
+      <p class="seccion__eyebrow">Lo más pedido</p>
+      <h2 class="seccion__titulo">Productos destacados</h2>
+      <div class="grid-productos" id="grid-destacados"><!-- generado por JS --></div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       3. CATEGORÍAS / MENÚ COMPLETO
+  ====================================================== -->
+  <section class="seccion seccion--alt" id="menu">
+    <div class="contenedor">
+      <p class="seccion__eyebrow">Carta completa</p>
+      <h2 class="seccion__titulo">Nuestro menú</h2>
+
+      <div class="tabs-categorias" id="tabs-categorias" role="tablist" aria-label="Categorías del menú"><!-- generado por JS --></div>
+
+      <div id="paneles-categorias"><!-- generado por JS --></div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       4. PROMOCIÓN DEL DÍA
+  ====================================================== -->
+  <section class="promo" id="promo">
+    <div class="contenedor promo__inner">
+      <div class="promo__media">
+        <img id="promo-img" src="" alt="" loading="lazy">
+      </div>
+      <div class="promo__contenido">
+        <p class="promo__badge" id="promo-badge">🔥 Promo del día</p>
+        <h2 id="promo-nombre" class="promo__titulo"></h2>
+        <p id="promo-descripcion" class="promo__descripcion"></p>
+        <div class="promo__precios">
+          <span id="promo-precio-antes" class="promo__precio-antes"></span>
+          <span id="promo-precio-ahora" class="promo__precio-ahora"></span>
+        </div>
+        <a id="promo-btn-wsp" class="btn btn--wsp btn--lg" href="#" target="_blank" rel="noopener">Pedir esta promo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       5. ¿POR QUÉ ELEGIRNOS?
+  ====================================================== -->
+  <section class="seccion" id="nosotros">
+    <div class="contenedor">
+      <p class="seccion__eyebrow">Nuestro compromiso</p>
+      <h2 class="seccion__titulo">¿Por qué elegirnos?</h2>
+      <div class="grid-beneficios" id="grid-beneficios"><!-- generado por JS --></div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       6. OPINIONES
+  ====================================================== -->
+  <section class="seccion seccion--alt" id="opiniones">
+    <div class="contenedor">
+      <p class="seccion__eyebrow">Nos eligen</p>
+      <h2 class="seccion__titulo">Lo que dicen nuestros clientes</h2>
+      <div class="grid-opiniones" id="grid-opiniones"><!-- generado por JS --></div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       7. HORARIOS + MAPA
+  ====================================================== -->
+  <section class="seccion" id="horarios">
+    <div class="contenedor horarios__inner">
+      <div class="horarios__info">
+        <p class="seccion__eyebrow">Encontranos</p>
+        <h2 class="seccion__titulo">Horarios &amp; ubicación</h2>
+        <ul class="lista-horarios" id="lista-horarios"><!-- generado por JS --></ul>
+        <p class="horarios__direccion" id="horarios-direccion"></p>
+        <a id="horarios-btn-wsp" class="btn btn--wsp" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
+      <div class="horarios__mapa">
+        <iframe id="mapa-iframe" src="" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del negocio en el mapa"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="footer">
+  <div class="contenedor footer__inner">
+    <div class="footer__marca">
+      <img id="footer-logo" src="" alt="" width="36" height="36">
+      <span id="footer-nombre"></span>
+    </div>
+
+    <div class="footer__redes" id="footer-redes"><!-- generado por JS --></div>
+
+    <p class="footer__copy" id="footer-copy"></p>
+  </div>
+</footer>
+
+<script src="js/negocio.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
